@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bean Voyage — เมล็ดกาแฟจากทั่วโลก</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== HEADER / NAVBAR ===================== -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#/home" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="var(--gold)" stroke-width="1.4" stroke-dasharray="2 4"/>
+        <path d="M14 24c0-6 3-10 6-10s6 4 6 10-3 7-6 7-6-1-6-7z" fill="var(--brown-dark)"/>
+        <path d="M20 14v14" stroke="var(--cream)" stroke-width="1.2"/>
+      </svg>
+      <span class="brand-text">Bean Voyage<small>คั่วเดินทาง</small></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#/home" data-route="home">หน้าแรก</a>
+      <a href="#/products" data-route="products">สินค้าทั้งหมด</a>
+      <a href="#/cart" data-route="cart">ตะกร้า
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="เปิดเมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="app">
+
+  <!-- ===================== HOME VIEW ===================== -->
+  <section class="view" id="view-home">
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">ORIGIN ROUTE — เส้นทางเมล็ดกาแฟ</p>
+        <h1>เก็บเกี่ยวจากไร่<br>ไกลถึงแก้วของคุณ</h1>
+        <p class="hero-sub">เราคัดเมล็ดกาแฟคุณภาพจาก 6 แหล่งปลูกทั่วโลก คั่วสดใหม่ทุกสัปดาห์ ส่งตรงถึงบ้านคุณ</p>
+        <div class="hero-cta">
+          <a href="#/products" class="btn btn-primary">เลือกซื้อเมล็ดกาแฟ</a>
+          <a href="#products-highlight" class="btn btn-ghost">สินค้าแนะนำ</a>
+        </div>
+      </div>
+
+      <div class="hero-route" aria-hidden="true">
+        <svg viewBox="0 0 520 260" class="route-svg">
+          <path id="routePath" d="M20,210 C120,60 180,230 260,120 S 420,40 500,90" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="1 10" stroke-linecap="round"/>
+          <g id="routeDots"></g>
+          <g id="travelBean">
+            <circle r="7" fill="var(--brown-dark)"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="highlights">
+      <div class="highlight-card">
+        <span class="hl-num">คั่ว</span>
+        <h3>คั่วสดใหม่ทุกสัปดาห์</h3>
+        <p>เมล็ดกาแฟถูกคั่วภายใน 7 วันก่อนจัดส่ง คงความหอมและรสชาติสดใหม่ที่สุด</p>
+      </div>
+      <div class="highlight-card">
+        <span class="hl-num">แหล่ง</span>
+        <h3>คัดสรรจากแหล่งปลูกชั้นนำ</h3>
+        <p>นำเข้าตรงจากไร่กาแฟในเอธิโอเปีย โคลอมเบีย บราซิล เคนยา กัวเตมาลา และไทย</p>
+      </div>
+      <div class="highlight-card">
+        <span class="hl-num">ส่ง</span>
+        <h3>จัดส่งรวดเร็วทั่วประเทศ</h3>
+        <p>บรรจุสูญญากาศป้องกันกลิ่นและความชื้น ส่งถึงมือภายใน 1-3 วันทำการ</p>
+      </div>
+    </section>
+
+    <section class="featured" id="products-highlight">
+      <div class="section-head">
+        <p class="eyebrow">แนะนำ</p>
+        <h2>สินค้าขายดี</h2>
+      </div>
+      <div class="product-grid" id="featuredGrid"></div>
+    </section>
+
+    <section class="story">
+      <div class="story-text">
+        <p class="eyebrow">เกี่ยวกับเรา</p>
+        <h2>ทุกเมล็ด มีเรื่องราวของแหล่งที่มา</h2>
+        <p>Bean Voyage เกิดจากความตั้งใจที่จะพาผู้ดื่มกาแฟไปสัมผัสรสชาติที่แตกต่างกันในแต่ละภูมิภาค ตั้งแต่ความหอมของดอกไม้ในเอธิโอเปีย ไปจนถึงความเข้มข้นของกาแฟบราซิล เราเชื่อว่ากาแฟที่ดีเริ่มต้นจากแหล่งปลูกที่ดี และการคั่วที่ใส่ใจในทุกขั้นตอน</p>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- ===================== PRODUCTS LIST VIEW ===================== -->
+  <section class="view" id="view-products">
+    <div class="page-head">
+      <p class="eyebrow">ร้านของเรา</p>
+      <h1>เมล็ดกาแฟทั้งหมด</h1>
+      <p class="page-sub">คัดสรรจาก 6 แหล่งปลูกทั่วโลก เลือกระดับการคั่วที่ใช่สำหรับคุณ</p>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-chip active" data-filter="all">ทั้งหมด</button>
+      <button class="filter-chip" data-filter="Light Roast">Light Roast</button>
+      <button class="filter-chip" data-filter="Medium Roast">Medium Roast</button>
+      <button class="filter-chip" data-filter="Dark Roast">Dark Roast</button>
+    </div>
+
+    <div class="product-grid" id="productsGrid"></div>
+  </section>
+
+  <!-- ===================== PRODUCT DETAIL VIEW ===================== -->
+  <section class="view" id="view-detail">
+    <div class="detail-wrap" id="detailWrap"></div>
+  </section>
+
+  <!-- ===================== CART VIEW ===================== -->
+  <section class="view" id="view-cart">
+    <div class="page-head">
+      <p class="eyebrow">ตะกร้าสินค้า</p>
+      <h1>รายการสั่งซื้อของคุณ</h1>
+    </div>
+    <div class="cart-wrap" id="cartWrap"></div>
+  </section>
+
+  <!-- ===================== CHECKOUT VIEW ===================== -->
+  <section class="view" id="view-checkout">
+    <div class="page-head">
+      <p class="eyebrow">ขั้นตอนสุดท้าย</p>
+      <h1>ยืนยันคำสั่งซื้อ</h1>
+    </div>
+    <div class="checkout-wrap" id="checkoutWrap"></div>
+  </section>
+
+</main>
+
+<!-- ===================== SUCCESS POPUP ===================== -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal-card">
+    <svg viewBox="0 0 60 60" width="56" height="56" aria-hidden="true">
+      <circle cx="30" cy="30" r="27" fill="none" stroke="var(--green)" stroke-width="3"/>
+      <path d="M18 31l8 8 16-18" fill="none" stroke="var(--green)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <h3>สั่งซื้อสำเร็จ</h3>
+    <p>ขอบคุณสำหรับการสั่งซื้อ เราจะเตรียมเมล็ดกาแฟของคุณให้คั่วสดใหม่และจัดส่งโดยเร็วที่สุด</p>
+    <button class="btn btn-primary" id="closeModalBtn">กลับสู่หน้าแรก</button>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-text">Bean Voyage<small>คั่วเดินทาง</small></span>
+      <p>เมล็ดกาแฟคุณภาพจากแหล่งปลูกทั่วโลก คั่วสดใหม่ทุกสัปดาห์</p>
+    </div>
+    <div class="footer-col">
+      <h4>ติดต่อเรา</h4>
+      <p>โทร: 02-123-4567</p>
+      <p>Email: hello@beanvoyage.co.th</p>
+      <p>ที่อยู่: 99 ถนนสีลม กรุงเทพฯ 10500</p>
+    </div>
+    <div class="footer-col">
+      <h4>ติดตามเรา</h4>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Line">LINE</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Bean Voyage. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
